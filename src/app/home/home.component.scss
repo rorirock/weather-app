@@ -1,0 +1,60 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .options{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0px;
+        .active{
+            background:#dfbd13 ;
+        }
+        .active:hover{
+            background: #dfbd13;
+        }
+        button{
+            margin:5px;
+        }
+        button:hover{
+            background: #4d62da;
+        }
+    }
+    
+    .options-filter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px;
+        width: 600px;
+        .degrees{
+            display: flex;
+            flex-direction: row;
+            margin-right: 10px;
+            .change-degrees{
+                cursor: pointer;
+                font-weight: bold;
+                margin:3px;
+                color: #c0c0c0;
+            }
+            .active{
+                cursor: default;
+                color: #000;
+            }
+        }
+    }
+    
+    .content-chart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 600px;
+        canvas{
+            border-radius: 5px;
+            border: 0px solid;
+            box-shadow: 7px 6px 8px #4d62da;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="content">
+    <div class="options">
+        <button
+             [ngClass]="{'active': activeBtn == option.code}"
+              mat-fab
+              extended
+              color="primary"
+              *ngFor="let option of options"
+              (click)="getDataWeather(option.code)">        
+        <mat-icon fontIcon="cloud"></mat-icon>
+            {{option.code}}
+        </button>
+    </div>
+    
+    <div class="options-filter">
+        <div class="degrees">
+            <p [ngClass]="{'active': activeDegrees =='F'}" 
+            class="change-degrees" 
+            (click)="changeDegrees('F')">°F
+            </p>
+            <p [ngClass]="{'active': activeDegrees =='C'}" 
+            class="change-degrees" (click)="changeDegrees
+            ('C')">°C
+            </p>
+        </div>
+        <button mat-raised-button color="primary" *ngIf="!filterDayOrNigth"  (click)="filterDayOrNight()">Filter only day</button>
+        <button mat-raised-button color="primary" *ngIf="filterDayOrNigth"  (click)="filterDayOrNight()">Filter only nigth</button>
+
+    </div>
+    
+    <div class="content-chart">
+            <canvas id="weatherChart"
+              baseChart
+              [type]="'line'"
+              [data]="lineChartData"
+              [options]="lineChartOptions"
+              [legend]="lineChartLegend">
+            </canvas>
+    </div>
+</div>
